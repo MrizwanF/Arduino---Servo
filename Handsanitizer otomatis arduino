@@ -1,18 +1,21 @@
+//untuk 2 servo
 #include <Servo.h>
-Servo myservo;
-int angle =0;
-int angleStep =50;
+Servo servokanan;
+Servo servokiri;
 
 void setup() { 
-  myservo.attach(8);
+  servokanan.attach(7);
+  servokiri.attach(8);
   pinMode(2,INPUT_PULLUP);
 }
 
 void loop() {
   if (digitalRead(2) == HIGH){
-myservo.write(180);
+servokanan.write(180);
+servokiri.write(180);
   }
   else {
-  myservo.write(-180);
+  servokanan.write(0);
+  servokiri.write(0);
   }
 }
